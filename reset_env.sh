@@ -7,8 +7,4 @@ IMAGE_TAG=latest
 # reset to master
 git branch -f staging  master
 
-helm upgrade
-	--kubeconfig=$KUBECONFIG
-	--install $APP_NAME .
-	--values=staging-values.yaml
-	--set ImageTag=$IMAGE_TAG
+helm upgrade --kubeconfig=$KUBECONFIG --install $APP_NAME .  --values=staging-values.yaml --set ImageTag=$IMAGE_TAG
